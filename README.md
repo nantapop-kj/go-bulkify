@@ -105,27 +105,12 @@ cfg.BuildPayload = payload.Wrap(func(i int) (Order, string) {
 go run main.go
 ```
 
-Use a specific config file:
-```bash
-go run main.go -config config.prod.json
-```
-
-### Option 2: Build and run binary
-```bash
-go build -o go-bulkify .
-./go-bulkify -config config.json
-```
-
-### Option 3: Run with Docker
+### Option 2: Run with Docker
 Build the image:
 ```bash
 docker build -t go-bulkify:dev .
 ```
-Run the bulk requests:
-```bash
-docker run --rm go-bulkify:dev ./main -config config.json
-```
-Or keep the container running and exec in:
+Run the container:
 ```bash
 docker run -d --name go-bulkify go-bulkify:dev
 docker exec go-bulkify ./main -config config.json
@@ -152,10 +137,9 @@ docker exec go-bulkify ./main -config config.json
 go-bulkify/
 ├── config/
 │   └── config.go        # Config struct + LoadFromFile + env overrides
-├── internal/
-│   └── runner/
-│       ├── client.go    # HTTP request execution
-│       └── worker.go    # Worker pool and Run()
+├── runner/
+│   ├── client.go        # HTTP request execution
+│   └── worker.go        # Worker pool and Run()
 ├── payload/
 │   └── payload.go       # Payload struct, BuildPayload, Wrap[T]
 ├── config.json          # Central configuration file

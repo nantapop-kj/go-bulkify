@@ -6,8 +6,8 @@ import (
 	"log"
 
 	"github.com/nantapop-kj/go-bulkify/config"
-	"github.com/nantapop-kj/go-bulkify/internal/runner"
 	"github.com/nantapop-kj/go-bulkify/payload"
+	"github.com/nantapop-kj/go-bulkify/runner"
 )
 
 func main() {
