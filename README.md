@@ -113,7 +113,6 @@ docker build -t go-bulkify:dev .
 Run the container:
 ```bash
 docker run -d --name go-bulkify go-bulkify:dev
-docker exec go-bulkify ./main -config config.json
 ```
 
 ---
