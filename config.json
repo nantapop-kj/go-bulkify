@@ -1,0 +1,12 @@
+{
+    "_comment": "Duplicate this file for different environments: config.dev.json, config.prod.json",
+    "_envOverrides": "BULKIFY_URL, BULKIFY_METHOD, BULKIFY_WORKER_COUNT, BULKIFY_TOTAL_RECORDS, BULKIFY_TIMEOUT_SECONDS",
+    "url": "https://httpbin.org/post",
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "worker_count": 5,
+    "total_records": 20,
+    "timeout_seconds": 10
+}
